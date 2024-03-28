@@ -8,6 +8,9 @@ if [ -x "$(command -v node)" ]; then
   sudo rm -r /etc/apt/keyrings/nodesource.gpg
 fi
 
-# Install Node.js 21.x
-curl -fsSL https://deb.nodesource.com/setup_21.x | bash - &&\
-apt-get install -y nodejs
+# Install Node.js latest
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+source ~/.bashrc
+
+nvm install node

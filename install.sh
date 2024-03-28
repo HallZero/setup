@@ -1,8 +1,9 @@
-for file in */*.sh; do
-    if ![-x "$file"]; then
+cd "$(dirname "$0")" || exit 
+
+for file in ./dev/*.sh; do
+    if [! -x "$file"]; then
         chmod +x "$file"
     fi
 
-    # Need to add the running logic later
-
+    nohup bash "$file" >/dev/null 2>&1 &
 done

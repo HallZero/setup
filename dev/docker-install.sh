@@ -6,6 +6,8 @@
 
   # Removes any previous images
 
+  sudo docker stop $(sudo docker ps -a -q)
+
   sudo rm -rf /var/lib/docker
   sudo rm -rf /var/lib/containerd
 
